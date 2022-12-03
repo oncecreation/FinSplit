@@ -1,9 +1,9 @@
 import express from "express";
 import cors from "cors";
-import startDB from "./startup/db";
 import "dotenv/config";
+import startDB from "./startup/db";
+import { auth, user, group, expense } from "./routes";
 import morgan from "morgan";
-import { auth, user, expense, group } from "./routes";
 
 (async () => await startDB())();
 const app = express();
@@ -36,4 +36,3 @@ const server = app.listen(PORT, () => {
 });
 
 export default server;
-
