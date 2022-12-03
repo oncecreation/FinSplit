@@ -3,7 +3,7 @@ import cors from "cors";
 import startDB from "./startup/db";
 import "dotenv/config";
 import morgan from "morgan";
-import { auth, user, group } from "./routes";
+import { auth, user, expense, group } from "./routes";
 
 (async () => await startDB())();
 const app = express();
@@ -28,6 +28,7 @@ if (!process.env.JWT_PRIVATE_KEY) {
 app.use("/api/auth", auth);
 app.use("/api/user", user);
 app.use("/api/group", group);
+app.use("/api/expense", expense);
 
 const PORT = process.env.PORT || 3001;
 const server = app.listen(PORT, () => {
