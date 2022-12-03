@@ -43,8 +43,37 @@ router.post("/", async (req, res) => {
       name: user.name,
       email: user.email,
     });
+
+
+    // Check requested client and send token accordingly
+  const regex = /^PostmanRuntime/i;
+  let userAgent = req.header("user-agent");
+  if (regex.test(userAgent)) {
+    res.send({ token });
+  } else {
     res.send(token);
+  }
 });
+
+// Generate new Auth Token
+router.post("/updateToken", async (req, res) => {
+    const user = await User.findOne({ email: req.body.email });
+    const token = await generateAuthToken({
+      _id: user._id,
+      name: user.name,
+      email: user.email,
+    });
+    res.send(token);
+  });
+
+  const validate = (req) => {
+    const schema = {
+      email: Joi.string().min(5).max(255).required().email(),
+      password: Joi.string().min(5).max(1024).required(),
+    };
+
+    return Joi.object(schema).validate(req);
+  };
 
 
 export default router;

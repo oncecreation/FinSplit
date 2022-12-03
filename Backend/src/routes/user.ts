@@ -2,6 +2,7 @@ import bcrypt from "bcrypt";
 import { Request, Router } from "express";
 import _ from "lodash";
 import {  User, validate } from "../models";
+import { authMiddleWare } from "../middleware";
 import jwt from "jsonwebtoken";
 import mongoose from "mongoose";
 
@@ -41,5 +42,27 @@ router.post("/", async (req, res) => {
       .header("access-control-expose-headers", "Authorization")
       .send(_.pick(user, ["_id", "name", "email"]));
 });
+
+// Get User Information | Profile
+router.get(
+    "/me",
+    authMiddleWare,
+    async (req: Request & { user: UserType }, res) => {
+      const user = await User.findById(req.user._id).select("-password");
+      res.send(user);
+    }
+  );
+
+// Get User Information | Profile by email
+router.get("/:email", authMiddleWare, async (req, res) => {
+    const user = await User.findOne({ email: req.params.email });
+    if (!user) return res.status(404).send("User not found.");
+    delete user.password;
+    res.send({
+      name: user.name,
+      email: user.email,
+      id: user._id,
+    });
+  });
 
   export default router;

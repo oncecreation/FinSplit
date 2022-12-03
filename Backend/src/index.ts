@@ -1,8 +1,10 @@
 import express from "express";
 import cors from "cors";
+import startDB from "./startup/db";
 import "dotenv/config";
 import morgan from "morgan";
 
+(async () => await startDB())();
 const app = express();
 app.use(express.json());
 app.use(cors());
