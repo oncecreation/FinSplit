@@ -4,11 +4,7 @@
 
 ### 💡 Inspiration
 
--   The survey shows the share of adults turning to payment apps for bill-splitting at least once a week was highest in the 18-to-25 age group (60%), followed by the 26-to-41 group (58%).
--   Because of the endless expenses every month and the lack of a system to keep track of who’s paying for what and when (solely relying on memory), We began to realise that such a system led to erratic expenditure which was difficult to keep track of.
--   This inspired us to create a functional application that would be able to help those struggling with anxiety in their day-to-day life.
--   According to experts, users frequently lose track of who they gave money to, occupy their minds with other thoughts, and find themselves more anxious.
--   Therefore, we are attempting to create an app to assist individuals in living stress-free lives. FinSplit is a bill splitting option that may enable friends and family members who share everyday activities split costs.
+-   We live in a hostel, and we need to split almost all our expenses on a daily basis. We started to realise that this lack of structure led to unpredictable spending that was hard to keep track of as a result of the infinite costs, we incurred each month and the inability to keep track of who was paying for what and when. So we came up with FinSPlit to make things easier to manage and save time.
 
 ### 💻 What it does
 
@@ -27,7 +23,19 @@
 4. AWS S3 Bucket
 
 ### 🐞 Challenges we ran into
+- It was challenging for us to put up security measures to safeguard user information from unauthorized users, as well as CORS policies to let authorized users access to our API endpoints.
+- Using a jsonwebtoken for authorization was a bit typical for us as we were trying out this method for the first time.
 
--   Completing the project was a challenge because we had to implement the project by a deadline.
--   As we are new to fintech, we face problems in getting the content properly with minimum lag.
--   For developing the Split Bill concept was time-consuming as we are new to this problem statement but having large set of resources for Node.js and React.js with Typescript was a bit easier.
+### 😎 Accomplishments that we're proud of
+- We found solutions to issues that actually exist in the world and affect us in our daily lives.
+- We are providing End to End Encryption to the user's data.
+- We completed the app within timeline
+
+### 🧠 What we learned
+- We learned how to secure our API Endpoints for security mechanism and data privacy.
+- We learned how we can encrypt and validate users' personal data with the help of crypto package provided by Node.js
+- We learned how to analyze the charts on the basis of our daily expenses and how to integrate it in React.js.
+
+### ✨ What's next for FinSplit
+- Creating the app's own crypto currency and making a single click settlement within app.
+
