@@ -21,8 +21,8 @@
 
 ### ⚒️ Technologies
 
-1. Node.js
-2. React.js
+1. Node.js (Typescript)
+2. React.js (Typescript)
 3. MongoDB
 4. AWS S3 Bucket
 
@@ -30,4 +30,4 @@
 
 -   Completing the project was a challenge because we had to implement the project by a deadline.
 -   As we are new to fintech, we face problems in getting the content properly with minimum lag.
--   For developing the Split Bill concept was time-consuming as we are new to this problem statement but having large set of resources for Node.js and React.js was a bit easier.
+-   For developing the Split Bill concept was time-consuming as we are new to this problem statement but having large set of resources for Node.js and React.js with Typescript was a bit easier.
